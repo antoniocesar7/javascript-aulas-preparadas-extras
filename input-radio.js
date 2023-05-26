@@ -1,0 +1,1 @@
+escolha = document.ge

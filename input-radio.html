@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input type "radio"</title>
+</head>
+
+<body>
+  <h2>Selecione o idioma preferido:</h2>
+  <input type="radio" name="language" value="portuguese" id="radioPortuguese">
+  <label for="radioPortuguese">Português</label><br>
+
+  <input type="radio" name="language" value="english" id="radioEnglish">
+  <label for="radioEnglish">English</label><br>
+
+  <input type="radio" name="language" value="spanish" id="radioSpanish">
+  <label for="radioSpanish">Español</label><br>
+
+  <button onclick="getSelectedLanguage()">Obter idioma selecionado</button>
+
+  <script>
+    function getSelectedLanguage() {
+      const languageRadios = document.getElementsByName('language');
+      let selectedLanguage;
+
+      for (let i = 0; i < languageRadios.length; i++) {
+        if (languageRadios[i].checked) {
+          selectedLanguage = languageRadios[i].value;
+          break;
+        }
+      }
+
+      if (selectedLanguage) {
+        document.write(`Idioma selecionado: ${selectedLanguage}`);
+      } else {
+        document.write('Nenhum idioma selecionado.');
+      }
+    }
+  </script>
+</body>
+
+</html>
+<!-- No exemplo acima, utilizamos o atributo id para cada botão de rádio e o atributo for nas 
+    tags <label> correspondentes para associá-las corretamente. Dessa forma, podemos acessar os 
+    elementos utilizando o método getElementById. Além disso, adicionamos um botão para chamar a
+    função getSelectedLanguage que verifica o idioma selecionado e exibe o resultado no navegador.
+ -->
